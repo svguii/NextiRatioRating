@@ -1,24 +1,24 @@
 # Relatório Automatizado
 
-Este projeto Python consiste em um script automatizado para obter dados de atendimento de uma API, realizar manipulações em uma planilha Excel local e inserir os dados resultantes em um banco de dados. A seguir, apresentamos uma descrição do código e sua estrutura.
+Este script Python automatiza o processo de obtenção, processamento e armazenamento de relatórios de atendimento de uma API. Ele realiza as seguintes etapas
 
 ## Estrutura de Arquivos
 
-1. **main.py**: O script principal que coordena todas as operações.
-2. **spreadsheet_handler.py**: Contém funções para processamento da planilha Excel.
-3. **date_handler.py**: Fornece funções para manipulação de datas.
-4. **database.py**: Gerencia a conexão com o banco de dados e insere os dados.
-5. **api_requests.py**: Lida com as solicitações à API para obter o token de acesso e os dados de atendimento.
-6. **config.py**: Arquivo de configuração para armazenar informações sensíveis como credenciais da API e do banco de dados.
+1. **Acesso à API:** Obtém um token de acesso para autenticar a conexão com a API.
+2. **Cálculo de Datas:** Calcula os parâmetros de data de início e fim para os relatórios.
+3. **Obtenção de Dados:** Faz uma solicitação à API para obter os dados de atendimento dentro do intervalo de datas especificado.
+4. **Processamento de Resposta:** Verifica se a solicitação foi bem-sucedida e, em caso afirmativo, salva os dados em um arquivo local no formato .xls.
+5. **Modificação do Arquivo:** Remove informações desnecessárias do arquivo .xls.
+6. **Inserção de Dados:** Insere os dados processados no banco de dados.
+7. **Limpeza:** Remove o arquivo temporário gerado durante o processo.
 
 ## Como Usar
 
 1. **Instalação de Dependências**: Certifique-se de ter as bibliotecas necessárias instaladas. Você pode instalá-las executando o seguinte comando:
+
    ```bash
    pip install pandas sqlalchemy requests
    ```
-
-
 2. **Configuração** : Abra o arquivo `config.py` e insira suas credenciais de API e do banco de dados.
 3. **Execução do Script** : Execute o script `main.py` para iniciar o processo automatizado. O script realizará as seguintes etapas:
 
@@ -33,8 +33,7 @@ Este projeto Python consiste em um script automatizado para obter dados de atend
 
 ## Observações Importantes
 
-* Certifique-se de proteger e manter em sigilo suas credenciais armazenadas no arquivo `config.py`.
-* A execução do script pode ser agendada para automação recorrente, por exemplo, utilizando programadores de tarefas.
+* Para utilizar este script, é necessário ter acesso à API de relatórios de atendimento, bem como as bibliotecas `api_requests`, `date_handler`, `spreadsheet_handler`, e `database` devem estar disponíveis no ambiente Python.
 
 ## Contribuições
 
